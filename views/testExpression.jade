@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  h1 Test Expression
+
+  br
+
+  form(action="/analyze", method="post" onsubmit="return ValidateRequiredFields();")
+    .form-group.row
+      label.col-sm-2.col-form-label(for='inputEmail3') Probe Method
+      .col-md-6
+        select(name='algoritm')#exampleFormControlSelect1.form-control
+          option(value='') -- select --
+          option(value='random') Random
+          option(value='deshpande') Deshpande
+    .form-group.row
+      label.col-sm-2.col-form-label(for='inputPassword3') Probe Value Method
+      .col-md-6
+        select(name='valmethod')#exampleFormControlSelect1.form-control
+          option(value='') -- select --
+          option(value='random') Random 
+         
+
+    .form-row
+      .form-group.col-md-6
+        label(for='inputCity') Inserte your boolean expression:
+        input#inputCity.form-control(name='exp' type='text')
+      .form-group.col-md-2
+        label(for='inputState') &nbsp;
+
+        button.form-control.btn.btn-primary.mb-2(type='submit') evaluate
+  
+
+
+

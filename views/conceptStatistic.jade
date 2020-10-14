@@ -1,0 +1,9 @@
+
+
+extends layout
+    
+block content
+    input#results(type="hidden" value='#{JSON.stringify(results)}')
+    #chartContainer(style='height: 300px; width: 100%;')
+
+    script(src='/javascripts/conceptStatistic.js')

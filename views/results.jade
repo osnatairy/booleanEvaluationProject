@@ -1,0 +1,77 @@
+extends layout
+
+block content
+  h1  
+    | 
+    u Probing Results
+    | 
+  - var currExpression = results[0] 
+  .p-4
+    table.table.table-borderless.table-responsive
+      tbody
+        tr
+          th Boolean expression ID
+          td #{currExpression.evaluationid} 
+        tr
+          th query ID
+          td #{currExpression.queryId}
+        tr
+          th Prob Method:
+          td #{currExpression.probMethod} 
+        tr
+          th Prob Value Method:
+          td #{currExpression.probValueMethod} 
+        tr
+          th expression Type:
+          td #{currExpression.expressionType}
+        tr
+          th cnf:
+          td #{currExpression.cnf}
+        tr
+          th dnf:
+          td #{currExpression.dnf}
+        //tr
+          th Email
+          td johncarter@mail.com
+    //h3 boolean ID # #{currExpression.booleanId} 
+        
+ 
+    p
+      | 
+      b Original Expression:
+      | 
+ 
+    P #{currExpression.expression}
+        //p.lead
+          | Use this document as a way to quickly start any new project.
+          br
+          |  All you get is this text and a mostly barebones HTML document.
+  br
+  table.table
+    thead
+      tr        
+        th(scope='col') round
+        th(scope='col') concepts
+        th(scope='col') clauses
+        th(scope='col') terms
+        th(scope='col') cnf expression
+        th(scope='col') dnf expression
+        th(scope='col') concept
+        th(scope='col') value
+        th(scope='col') concepts dic
+        th(scope='col') isReadOnce
+        th(scope='col') runTime
+    tbody
+      each element in results
+        tr.fit
+          td #{element.probRound}               
+          td #{element.conceptCount}
+          td #{element.closesNum} 
+          td #{element.termsNum}
+          td #{element.cnf}
+          td #{element.dnf}
+          td #{element.choosenConcept}
+          td #{element.conceptValue}
+          td #{element.dic_string}
+          td #{element.isReadOnce}
+          td #{element.runTimeToEvaluatedNextProb}

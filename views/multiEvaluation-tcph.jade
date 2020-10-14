@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  h1 TCP-H Query Analysis Multiple Evaluation 
+  br
+  form(action="/evaluate/multiEvaluation", method="post")
+
+    .form-group.row
+      label.col-sm-2.col-form-label(for='inputEmail3') Probe Method
+      .col-md-6
+        select(name='algorithm')#exampleFormControlSelect1.form-control
+          option(value='') -- select --
+          option(value='random') Random
+          option(value='deshpande') Deshpande
+          option(value='huristicAllen') HuristicAllen
+          option(value='algo1') Algo-1
+          option(value='greedy') Greedy
+
+    .form-group.row
+      label.col-sm-2.col-form-label(for='inputPassword4') Probe Value Method
+      .col-md-6
+        select(name='valmethod' )#exampleFormControlSelect1.form-control
+          option(value='') -- select --
+              for v in [1, 2, 3, 4, 5,6,7,8,9,10]
+                option(value='#{v}') ##{v}
+      
+      
+
+    .form-row
+      .form-group.col-md-6
+        label(for='exampleFormControlSelect1') Choose TCP-H Query:
+        select#query.form-control(name ='query' )
+          option(value='') -- select --
+          each v in queries
+            option(value='#{v}') #{v.replace(".txt", "")}
+      .form-group.col-md-2
+        label(for='inputState') &nbsp;
+
+        button.form-control.btn.btn-primary.mb-2(type='submit') evaluate
+  
+    |   
+    #app
+
+
+ 
+    
+    
+
+    

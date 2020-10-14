@@ -1,0 +1,72 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='Mark Otto, Jacob Thornton, and Bootstrap contributors')
+    meta(name='generator', content='Jekyll v4.0.1')
+    title Starter Template · Bootstrap
+    link(rel='canonical', href='https://getbootstrap.com/docs/4.5/examples/starter-template/')
+    // Bootstrap core CSS
+    link(href='/bootstrap/css/bootstrap.css', rel='stylesheet')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+      .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      }
+      @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+      }
+      }
+    // Custom styles for this template
+    link(href='/stylesheets/starter-template.css', rel='stylesheet')
+  body
+    nav.navbar.navbar-expand-md.navbar-dark.bg-dark.fixed-top
+      a.navbar-brand(href='#') Boolean Analysis
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExampleDefault', aria-controls='navbarsExampleDefault', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarsExampleDefault.collapse.navbar-collapse
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            a(class="#{ active === 'index' ? 'active' : '' }", href="/").nav-link
+            
+              | Home 
+              span.sr-only (current)
+          li.nav-item
+            a(class="#{ active === 'tcph' ? 'active' : '' }", href="/tcph").nav-link TCP-H
+          li.nav-item
+            a(class="#{ active === 'test' ? 'active' : '' }", href="/test").nav-link Test Boolean
+          
+          //li.nav-item
+            a(href="/test_loop").nav-link Create Multiple Evaluations
+          li.nav-item
+            a(class="#{ active === 'multi' ? 'active' : '' }", href="/multiEvaluation").nav-link Multiple Evaluations
+          li.nav-item
+            a(class="#{ active === 'bool' ? 'active' : '' }", href="/data/getGraph").nav-link Data Results
+          //li.nav-item.dropdown
+            a#dropdown01.nav-link.dropdown-toggle(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dropdown
+            .dropdown-menu(aria-labelledby='dropdown01')
+              a.dropdown-item(href='#') Action
+              a.dropdown-item(href='#') Another action
+              a.dropdown-item(href='#') Something else here
+        
+    main.container(role='main')
+      .container
+        br
+        block content
+
+    // /
+    script(src='https://code.jquery.com/jquery-3.5.1.slim.min.js', integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj', crossorigin='anonymous')
+    script(src="/javascripts/script.js")
+    script.
+      window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\\/script>')
+    script(src='../assets/dist/js/bootstrap.bundle.js')
+    script(src='https://canvasjs.com/assets/script/canvasjs.min.js')
+

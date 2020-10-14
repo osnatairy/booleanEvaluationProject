@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  h1 Evaluation for specific expression
+    
+  h1  
+    | 
+    u Probing Results
+    | 
+  - var currExpression = results[0] 
+  .starter-template
+    table.table.table-borderless.table-responsive
+      tbody
+        tr
+          th Boolean expression ID
+          td #{currExpression.id} 
+        tr
+          th query ID
+          td #{currExpression.queryId}
+        tr
+          th Prob Method:
+          td #{currExpression.probMethod} 
+        tr
+          th Prob Value Method:
+          td #{currExpression.probValueMethod} 
+        tr
+          th expression Type:
+          td #{currExpression.expressionType}
+        //tr
+          th Email
+          td johncarter@mail.com
+    //h3 boolean ID # #{currExpression.booleanId} 
+        
+ 
+    p
+      | 
+      b Original Expression:
+      | 
+ 
+    P #{currExpression.expression}
+        //p.lead
+          | Use this document as a way to quickly start any new project.
+          br
+          |  All you get is this text and a mostly barebones HTML document.
+  br
+  table.table
+    thead
+      tr        
+        th(scope='col') probRound
+        th(scope='col') conceptCount
+        th(scope='col') closesNum
+        th(scope='col') termsNum
+        th(scope='col') cnf
+        th(scope='col') dnf
+        th(scope='col') choosenConcept
+        th(scope='col') conceptValue
+        th(scope='col') probability
+        th(scope='col') runTimeToEvaluatedNextProb
+    tbody
+      each element in results
+        tr
+          td #{element.probRound}               
+          td #{element.conceptCount}
+          td #{element.closesNum} 
+          td #{element.termsNum}
+          td #{element.cnf}
+          td #{element.dnf} 
+          td #{element.choosenConcept}
+          td #{element.conceptValue}
+          td #{element.probability}
+          td #{element.runTimeToEvaluatedNextProb}
+

@@ -1,0 +1,37 @@
+extends layout
+
+block content
+  h1 Boolean Evaluation Probing Results
+
+
+  table.table
+    thead
+      tr 
+              
+        th(scope='col') probRound
+        th(scope='col') conceptCount
+        th(scope='col') closesNum
+        th(scope='col') termsNum
+        th(scope='col') cnf
+        th(scope='col') dnf
+        th(scope='col') choosenConcept
+        th(scope='col') conceptValue
+        th(scope='col') isReadOnce
+        th(scope='col') runTimeToEvaluatedNextProb
+        
+    tbody
+      each element in docs
+        tr
+           
+          td ##{element.probRound}               
+          td #{element.conceptCount}
+          td #{element.closesNum} 
+          td #{element.termsNum}
+          td #{element.cnf}
+          td #{element.dnf} 
+          td #{element.choosenConcept}
+          td #{element.conceptValue}
+          td #{element.isReadOnce}
+          td #{element.runTimeToEvaluatedNextProb}
+
+  

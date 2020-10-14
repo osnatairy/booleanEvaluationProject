@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1 Boolean Evaluation Probing Results
+  
+  #container.col
+      #accordion
+         -var i = 1
+         each expression in docs
+            .card
+            #headingOne.card-header
+                h5.mb-0
+                button.btn.btn-link(data-toggle='collapse', data-target='#collapse#{+i}', aria-expanded='true', aria-controls='collapse#{+i}')
+                    | ##{i} expression (isReadOnce = #{expression[0].isReadOnce}) 
+                    br
+                    //p DNF: #{expression[0].dnf}
+                    //P 
+            div(id='collapse#{i++}').collapse.show(aria-labelledby='headingOne', data-parent='#accordion')
+                .card-body
+                  table.table
+                    thead
+                    tr                 
+                        th(scope='col') probRound
+                        th(scope='col') conceptCount
+                        th(scope='col') closesNum
+                        th(scope='col') termsNum
+                        //th(scope='col') cnf
+                        th(scope='col') dnf
+                        th(scope='col') choosenConcept
+                        th(scope='col') conceptValue
+                        th(scope='col') isReadOnce
+                        th(scope='col') runTime
+                        
+                    tbody
+                    each element in expression
+                        tr
+                        
+                        td ##{element.probRound}               
+                        td #{element.conceptCount}
+                        td #{element.closesNum} 
+                        td #{element.termsNum}
+                        //td #{element.cnf}
+                        td #{element.dnf}
+                        
+                        td #{element.choosenConcept}
+                        td #{element.conceptValue}
+                        td #{element.isReadOnce}
+                        td #{element.runTimeToEvaluatedNextProb}

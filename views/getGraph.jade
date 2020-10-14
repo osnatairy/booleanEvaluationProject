@@ -1,0 +1,20 @@
+extends layout
+    
+block content
+   a(href="/data") Data Table Results
+
+   a(href="/data/grapfresults") Graphs Per Params Results
+
+   input#results(type="hidden" value='#{JSON.stringify(finalResults)}')
+   #chartContainer50(style='height: 300px; width: 100%;')
+
+   #chartContainer100(style='height: 300px; width: 100%;')
+
+   #chartContainer500(style='height: 300px; width: 100%;')
+
+   #chartContainer1000(style='height: 300px; width: 100%;')
+
+
+
+    script(type='text/javascript', src='https://canvasjs.com/assets/script/canvasjs.min.js')
+    script(src='/javascripts/graphscript.js')

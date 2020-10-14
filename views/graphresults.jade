@@ -1,0 +1,10 @@
+extends layout
+    
+block content
+    input#results(type="hidden" value='#{JSON.stringify(results)}')
+    #termsContainer(style='height: 300px; width: 100%;')
+    #clausesContainer(style='height: 300px; width: 100%;')
+    #expressionContainer(style='height: 300px; width: 100%;')
+    #conceptsContainer(style='height: 300px; width: 100%;')
+
+    script(src='/javascripts/graphresult.js')
